@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Chuck-Norris-Jokes</string>
+    <string name="chuck_noris">Chuck Noris</string>
+    <string name="jokes">Jokes</string>
+</resources>
