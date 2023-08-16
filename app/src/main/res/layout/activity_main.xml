@@ -40,7 +40,8 @@
 
     <TextView
         android:id="@+id/joke"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
+        android:maxWidth="250dp"
         android:layout_height="wrap_content"
         android:text="@string/joke"
         android:radius="16dp"
