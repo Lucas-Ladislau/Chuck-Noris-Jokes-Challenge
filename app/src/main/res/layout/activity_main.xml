@@ -39,9 +39,10 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
+        android:id="@+id/joke"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="When Chuck Norris pours milk on his Rice Crispies.....They Shut the F##K UP!!!!!"
+        android:text="@string/joke"
         android:radius="16dp"
         android:textColor="@android:color/black"
         app:layout_constraintTop_toTopOf="@id/whiteSquareView"
@@ -76,6 +77,7 @@
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/newJoke"
         android:layout_width="wrap_content"
+        android:contentDescription="@string/refresh_button"
         android:layout_height="wrap_content"
         style="@style/CustomCircularExtendedFAB"
         android:backgroundTint="@color/strong_orange"
@@ -86,5 +88,16 @@
         app:layout_constraintBottom_toBottomOf="@id/whiteSquareView"
         app:layout_constraintEnd_toEndOf="@id/whiteSquareView"
         app:layout_constraintStart_toStartOf="@id/whiteSquareView" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="153dp"
+        android:contentDescription="@string/logo"
+        android:layout_height="125dp"
+        app:layout_constraintTop_toTopOf="@id/whiteSquareView"
+        app:layout_constraintStart_toStartOf="@id/whiteSquareView"
+        app:layout_constraintEnd_toEndOf="@id/whiteSquareView"
+        app:srcCompat="@drawable/chucknorris_logo"
+        tools:layout_editor_absoluteX="129dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

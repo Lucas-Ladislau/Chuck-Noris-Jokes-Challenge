@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Chuck-Norris-Jokes</string>
-    <string name="chuck_noris">Chuck Noris</string>
+    <string name="chuck_noris">Chuck Norris</string>
     <string name="jokes">Jokes</string>
+    <string name="logo">chuck noris logo</string>
+    <string name="joke">When Chuck Norris pours milk on his Rice Crispies.....They Shut the F##K UP!!!!!</string>
+    <string name="refresh_button">Refresh button</string>
 </resources>
