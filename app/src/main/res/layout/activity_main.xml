@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Parte superior colorida -->
     <View
         android:id="@+id/topColorView"
         android:layout_width="0dp"
@@ -18,7 +17,6 @@
         app:layout_constraintHeight_percent="0.4"
         app:layout_constraintBottom_toTopOf="@id/bottomColorView" />
 
-    <!-- Parte inferior colorida -->
     <View
         android:id="@+id/bottomColorView"
         android:layout_width="0dp"
@@ -28,10 +26,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
-
-    <!-- Quadrado em branco no centro da tela -->
-
-    <!-- TextView dentro do quadrado em branco -->
 
     <View
         android:id="@+id/whiteSquareView"
@@ -45,16 +39,17 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Hello, World!"
+        android:text="When Chuck Norris pours milk on his Rice Crispies.....They Shut the F##K UP!!!!!"
         android:radius="16dp"
         android:textColor="@android:color/black"
         app:layout_constraintTop_toTopOf="@id/whiteSquareView"
         app:layout_constraintBottom_toBottomOf="@id/whiteSquareView"
         app:layout_constraintStart_toStartOf="@id/whiteSquareView"
         app:layout_constraintEnd_toEndOf="@id/whiteSquareView"
-        android:layout_margin="16dp" />
+        android:gravity="center"
+         />
 
     <TextView
         android:id="@+id/chuck_noris"
@@ -77,5 +72,19 @@
         android:textStyle="italic"
         app:layout_constraintTop_toBottomOf="@+id/chuck_noris"
         android:layout_marginTop="10dp" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/newJoke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CustomCircularExtendedFAB"
+        android:backgroundTint="@color/strong_orange"
+        android:padding="5dp"
+        android:textColor="?colorOnPrimary"
+        app:icon="@drawable/baseline_refresh_24"
+        app:iconTint="?colorOnPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/whiteSquareView"
+        app:layout_constraintEnd_toEndOf="@id/whiteSquareView"
+        app:layout_constraintStart_toStartOf="@id/whiteSquareView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

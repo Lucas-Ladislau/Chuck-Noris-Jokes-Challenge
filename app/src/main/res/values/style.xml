@@ -1,0 +1,11 @@
+<resources>
+    <!-- Define um estilo para um botão circular -->
+    <style name="CustomCircularExtendedFAB" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.AppTheme.CircularExtendedFAB</item>
+    </style>
+
+    <!-- Define um estilo para o arredondamento das bordas -->
+    <style name="ShapeAppearanceOverlay.AppTheme.CircularExtendedFAB" parent="">
+        <item name="cornerSize">50%</item> <!-- Define um raio de arredondamento que faz o botão circular -->
+    </style>
+</resources>
