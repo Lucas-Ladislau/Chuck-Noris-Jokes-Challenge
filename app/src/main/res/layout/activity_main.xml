@@ -52,6 +52,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:layout_width="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="35dp"
+            android:layout_gravity="end"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/baseline_share_24" />
 
         <ImageView
             android:id="@+id/logo"
