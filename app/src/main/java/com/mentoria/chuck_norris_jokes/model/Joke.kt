@@ -1,4 +1,4 @@
-package com.mentoria.chuck_norris_jokes
+package com.mentoria.chuck_norris_jokes.model
 
 import com.google.gson.annotations.SerializedName
 
