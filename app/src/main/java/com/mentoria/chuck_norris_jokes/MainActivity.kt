@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         getJoke()
+        val refreshButton: Button = findViewById(R.id.newJoke)
 
+        refreshButton.setOnClickListener(){
+            getJoke()
+        }
 
     }
 
