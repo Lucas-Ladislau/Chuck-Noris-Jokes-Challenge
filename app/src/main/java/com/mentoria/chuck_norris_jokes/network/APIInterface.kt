@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface APIInterface {
 
-    @GET("/random")
-    fun joke(): Call<Joke>
+    @GET("jokes/random")
+    fun getJoke(): Call<Joke>
 }
