@@ -3,6 +3,7 @@ package com.mentoria.chuck_norris_jokes
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         jokeViewModel = ViewModelProvider(this).get(JokeViewModel::class.java)
 
         jokeViewModel.getJoke()
+        jokeViewModel.getCategories()
         val refreshButton: Button = findViewById(R.id.newJoke)
         val sharebutton: ImageButton = findViewById(R.id.shareButton)
 

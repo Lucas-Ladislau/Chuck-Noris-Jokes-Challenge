@@ -8,4 +8,9 @@ interface APIInterface {
 
     @GET("jokes/random")
     fun getJoke(): Call<Joke>
+
+    @GET("jokes/categories")
+    fun getCategories(): Call<List<String>>
+
+
 }
