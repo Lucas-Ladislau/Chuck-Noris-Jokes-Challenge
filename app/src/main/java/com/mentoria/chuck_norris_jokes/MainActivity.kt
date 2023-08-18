@@ -8,10 +8,13 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.mentoria.chuck_norris_jokes.model.Joke
 import com.mentoria.chuck_norris_jokes.network.APIClient
 import com.mentoria.chuck_norris_jokes.network.APIInterface
+import com.mentoria.chuck_norris_jokes.viewModel.JokeViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,20 +22,21 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
-    //perguntar o pq de não funcionar dessa forma
-    //var jokeTextView: TextView = findViewById(R.id.joke)
+    lateinit var jokeTextView: TextView
+    private lateinit var jokeViewModel: JokeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        jokeTextView = findViewById(R.id.joke)
+        jokeViewModel = ViewModelProvider(this).get(JokeViewModel::class.java)
 
-        getJoke()
+        jokeViewModel.getJoke()
         val refreshButton: Button = findViewById(R.id.newJoke)
         val sharebutton: ImageButton = findViewById(R.id.shareButton)
-        val jokeTextView: TextView = findViewById(R.id.joke)
 
         refreshButton.setOnClickListener(){
-            getJoke()
+            jokeViewModel.getJoke()
         }
         sharebutton.setOnClickListener(){
             val intent = Intent(Intent.ACTION_SEND)
@@ -43,31 +47,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(chooser)
         }
 
-    }
-
-    fun getJoke(){
-        val retrofitAPIClient = APIClient.getRetrofitInstance("https://api.chucknorris.io/")
-        val endpoint = retrofitAPIClient.create(APIInterface::class.java).getJoke()
-        val jokeTextView: TextView = findViewById(R.id.joke)
-
-        endpoint.enqueue(object : Callback<Joke> {
-            override fun onResponse(call: Call<Joke>, response: Response<Joke>) {
-                if (response.isSuccessful){
-                    val joke: Joke? = response.body()
-                    if (joke != null){
-
-                        jokeTextView.text = joke.value
-                    }
-                }else{
-                    println("Resposta não bem sucedida: ${response.code()}")
-                }
-
-            }
-
-            override fun onFailure(call: Call<Joke>, t: Throwable) {
-                println("Deu erro: ${t.message}")
-            }
-
+        jokeViewModel.jokeLiveData.observe(this, Observer { joke ->
+           jokeTextView.text = joke.value
         })
+
+
+
     }
+
+
 }
