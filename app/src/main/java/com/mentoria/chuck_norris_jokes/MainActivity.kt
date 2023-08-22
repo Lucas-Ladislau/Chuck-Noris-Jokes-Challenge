@@ -40,6 +40,16 @@ class MainActivity : AppCompatActivity() {
         refreshButton.setOnClickListener(){
             jokeViewModel.getJoke()
         }
+
+        share(sharebutton)
+
+        jokeViewModel.jokeLiveData.observe(this, Observer { joke ->
+           jokeTextView.text = joke.value
+        })
+
+    }
+
+    fun share(sharebutton: ImageButton){
         sharebutton.setOnClickListener(){
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
@@ -48,14 +58,6 @@ class MainActivity : AppCompatActivity() {
             val chooser = Intent.createChooser(intent, "Share this Joke, Cowboy")
             startActivity(chooser)
         }
-
-        jokeViewModel.jokeLiveData.observe(this, Observer { joke ->
-           jokeTextView.text = joke.value
-        })
-
-
-
     }
-
 
 }
