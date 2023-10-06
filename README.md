@@ -17,7 +17,7 @@ Requisitos mínimos:
 Serialization & Deserialization.
 
 
-	2 - Siga o layout proposto acima.
+2 - Siga o layout proposto acima.
 	Estude: Criação de activitys e layouts em XML. Adição de botões e manipulação de eventos de clique.
 
 	
